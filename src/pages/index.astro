@@ -33,6 +33,9 @@
 					/>
 					<span>Las Delicias de Moran</span>
 				</a>
+				<div class="menu-toggle" id="mobile-menu">
+					<i data-lucide="menu"></i>
+				</div>
 				<ul class="nav-links">
 					<li><a href="#inicio">Inicio</a></li>
 					<li><a href="#ubicacion">Ubicación</a></li>
@@ -367,9 +370,41 @@
 
 		<script is:inline>
 			document.addEventListener("DOMContentLoaded", () => {
-				// Icons
 				if (typeof window.lucide !== "undefined") {
 					window.lucide.createIcons();
+				}
+
+				// Mobile Menu Logic
+				const menuToggle = document.getElementById("mobile-menu");
+				const navLinks = document.querySelector(".nav-links");
+				const links = document.querySelectorAll(".nav-links li a");
+
+				if (menuToggle && navLinks) {
+					menuToggle.addEventListener("click", () => {
+						navLinks.classList.toggle("active");
+						const icon = menuToggle.querySelector("i");
+						if (navLinks.classList.contains("active")) {
+							icon.setAttribute("data-lucide", "x");
+						} else {
+							icon.setAttribute("data-lucide", "menu");
+						}
+						// Refresh icon
+						if (typeof window.lucide !== "undefined") {
+							window.lucide.createIcons();
+						}
+					});
+
+					// Close menu when clicking a link
+					links.forEach((link) => {
+						link.addEventListener("click", () => {
+							navLinks.classList.remove("active");
+							const icon = menuToggle.querySelector("i");
+							icon.setAttribute("data-lucide", "menu");
+							if (typeof window.lucide !== "undefined") {
+								window.lucide.createIcons();
+							}
+						});
+					});
 				}
 
 				// Modal Logic

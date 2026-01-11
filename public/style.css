@@ -134,6 +134,14 @@ nav {
     gap: 2rem;
 }
 
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: var(--primary);
+    z-index: 1001;
+    /* Ensure above other elements */
+}
+
 .nav-links a {
     font-weight: 500;
     font-size: 0.9rem;
@@ -230,13 +238,19 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     background: url('assets/hero.png') no-repeat center center/cover;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     position: relative;
     color: var(--white);
     margin-top: 0;
+    padding-top: 100px;
+    /* Account for fixed header */
+    padding-bottom: 2rem;
+    /* Reduced padding */
     animation: fadeIn 1s ease;
 }
 
@@ -255,6 +269,13 @@ nav {
     z-index: 2;
     max-width: 700px;
     animation: fadeInUp 1s ease 0.3s both;
+    /* Flex child props */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Prevent stretching of children like badge */
 }
 
 .badge {
@@ -289,14 +310,16 @@ nav {
 
 /* Scroll Indicator */
 .scroll-indicator {
-    position: absolute;
-    bottom: 3rem;
-    left: 0;
+    position: relative;
+    /* Changed from absolute */
+    bottom: auto;
+    left: auto;
     width: 100%;
     z-index: 2;
     text-align: center;
     color: var(--white);
     animation: fadeInUp 1.5s ease 1s both;
+    margin-top: 2rem;
 }
 
 .scroll-indicator span {
@@ -643,8 +666,54 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        /* Ensure icon has size */
+    }
+
     .nav-links {
-        display: none;
+        display: flex;
+        /* Changed from none to flex for transition possibilities, but controlled via opacity/visibility or max-height */
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-cream);
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        border-bottom: 2px solid rgba(139, 69, 19, 0.1);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+
+        /* Animation properties */
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .nav-links.active {
+        max-height: 400px;
+        /* Adjust based on content */
+        opacity: 1;
+        padding: 20px 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1.5rem 0;
+        font-size: 1.2rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-links a:hover {
+        background-color: rgba(139, 69, 19, 0.05);
     }
 
     .hero {
