@@ -1,0 +1,34 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+bin/
+obj/
+
+# generated types
+.astro/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.bak
+*.tmp
+
+# Astro cache
+.cache/
