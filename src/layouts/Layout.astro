@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/jpeg" href="/assets/logo.jpg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;700&family=Great+Vibes&display=swap"
+			rel="stylesheet"
+		/>
+		<script src="https://unpkg.com/lucide@latest" defer></script>
+	</head>
+	<body>
+		<slot />
+		
+		<script is:inline>
+			document.addEventListener("DOMContentLoaded", () => {
+				if (typeof window.lucide !== "undefined") {
+					window.lucide.createIcons();
+				}
+			});
+		</script>
+	</body>
+</html>

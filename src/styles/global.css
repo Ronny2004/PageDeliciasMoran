@@ -1,0 +1,274 @@
+/* Global Styles */
+:root {
+    --primary: #8B4513;
+    --primary-dark: #5D2E0A;
+    --accent: #E64A19;
+    --bg-warm: #FDF5E6;
+    --bg-cream: #FFFDD0;
+    --text-dark: #2F4F4F;
+    --text-light: #F5F5F5;
+    --white: #FFFFFF;
+    --font-heading: 'Lora', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-script: 'Great Vibes', cursive;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-warm);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: var(--transition);
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #BF360C;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(230, 74, 25, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-badge {
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: pulse 2s ease-in-out infinite;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-badge-primary {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+.btn-badge-secondary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Sections General */
+section {
+    padding: 4rem 0;
+    animation: fadeIn 0.8s ease;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    position: relative;
+    animation: fadeInUp 0.8s ease;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--accent), transparent);
+    margin-top: 1rem;
+}
+
+.center-text {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem auto;
+}
+
+/* Menu Grid Base Backup */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.menu-item {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    animation: fadeInUp 0.6s ease both;
+}
+
+.menu-item:nth-child(1) { animation-delay: 0.1s; }
+.menu-item:nth-child(2) { animation-delay: 0.2s; }
+.menu-item:nth-child(3) { animation-delay: 0.3s; }
+.menu-item:nth-child(4) { animation-delay: 0.4s; }
+.menu-item:nth-child(5) { animation-delay: 0.5s; }
+.menu-item:nth-child(6) { animation-delay: 0.6s; }
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.menu-img-placeholder {
+    height: 250px;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+    background-image: linear-gradient(45deg, var(--primary), var(--primary-dark));
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.menu-item:hover .menu-img-placeholder {
+    transform: scale(1.05);
+}
+
+.menu-img-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+    opacity: 0.1;
+}
+
+.img-desc {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.menu-info {
+    padding: 2rem;
+}
+
+.menu-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.menu-info p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--accent);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(230, 74, 25, 0.1);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.menu-item:hover .price {
+    background: var(--accent);
+    color: var(--white);
+    transform: scale(1.05);
+}
