@@ -1,0 +1,446 @@
+---
+---
+<div id="menuModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+            <div class="header-main">
+                <img src="/assets/logo.jpg" alt="Logo" />
+                <h2>Nuestra Carta</h2>
+            </div>
+            <p>
+                Sabor 100% Tradicional | Selecciona un Plato para ver
+                los detalles
+            </p>
+        </div>
+        <div class="modal-body">
+            <div class="rustic-menu-section">
+                <h4>Platos de la Casa:</h4>
+                <div class="rustic-menu-grid">
+                    <div class="rustic-menu-item" data-dish="tripas">
+                        <div class="item-header">
+                            <h3>Tripas Asadas</h3>
+                            <span class="item-price">$2.50</span>
+                        </div>
+                        <div class="item-details">
+                            <div class="detail-img">
+                                <img src="/assets/hero.png" alt="Tripas Asadas" />
+                            </div>
+                            <div class="detail-info">
+                                <h5>Ingredientes:</h5>
+                                <ul>
+                                    <li>Tripa de res premium</li>
+                                    <li>Marinado de ajo y comino</li>
+                                    <li>Papas doradas</li>
+                                    <li>Mote tierno</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rustic-menu-item" data-dish="cuero">
+                        <div class="item-header">
+                            <h3>Papas con Cuero</h3>
+                            <span class="item-price">$2.50</span>
+                        </div>
+                        <div class="item-details">
+                            <div class="detail-img">
+                                <img src="/assets/hero.png" alt="Papas con Cuero" />
+                            </div>
+                            <div class="detail-info">
+                                <h5>Ingredientes:</h5>
+                                <ul>
+                                    <li>Papas seleccionadas</li>
+                                    <li>Cuero de chancho tierno</li>
+                                    <li>Salsa espesa de maní</li>
+                                    <li>Cebolla y cilantro</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rustic-menu-item" data-dish="librillo">
+                        <div class="item-header">
+                            <h3>Papas con Librillo</h3>
+                            <span class="item-price">$2.50</span>
+                        </div>
+                        <div class="item-details">
+                            <div class="detail-img">
+                                <img src="/assets/hero.png" alt="Papas con Librillo" />
+                            </div>
+                            <div class="detail-info">
+                                <h5>Ingredientes:</h5>
+                                <ul>
+                                    <li>Librillo de res tierno</li>
+                                    <li>Papas harinosas</li>
+                                    <li>Salsa de maní y leche</li>
+                                    <li>Acompañante de aguacate</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rustic-menu-item" data-dish="caldo">
+                        <div class="item-header">
+                            <h3>Caldo de 31</h3>
+                            <span class="item-price">$2.50</span>
+                        </div>
+                        <div class="item-details">
+                            <div class="detail-img">
+                                <img src="/assets/hero.png" alt="Caldo de 31" />
+                            </div>
+                            <div class="detail-info">
+                                <h5>Ingredientes:</h5>
+                                <ul>
+                                    <li>Menudencias de res</li>
+                                    <li>Hierbas del huerto</li>
+                                    <li>Papas cocidas</li>
+                                    <li>Cebolla blanca y ajo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rustic-menu-item" data-dish="menudo">
+                        <div class="item-header">
+                            <h3>Menudo de Chancho</h3>
+                            <span class="item-price">$4.50</span>
+                        </div>
+                        <div class="item-details">
+                            <div class="detail-img">
+                                <img src="/assets/hero.png" alt="Menudo de Chancho" />
+                            </div>
+                            <div class="detail-info">
+                                <h5>Ingredientes:</h5>
+                                <ul>
+                                    <li>Vísceras de chancho</li>
+                                    <li>Mote pelado</li>
+                                    <li>Hierbabuena fresca</li>
+                                    <li>Refrito de achiote</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rustic-menu-section" style="margin-top: 20px;">
+                <h4>Bebidas:</h4>
+                <div class="rustic-menu-grid">
+                    <div class="rustic-menu-item" data-dish="colas">
+                        <div class="item-header">
+                            <h3>Colas Varias</h3>
+                            <span class="item-price">$0.50</span>
+                        </div>
+                        <p style="font-size: 0.9rem; font-style: italic; opacity: 0.8; margin-top: 5px;">
+                            Medianas personales, siempre heladas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p>Precios incluyen impuestos</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: url('/assets/parchment.png') no-repeat center center;
+    background-size: 100% 100%;
+    margin: 40px auto;
+    padding: 80px 100px;
+    width: 92%;
+    max-width: 650px;
+    min-height: 1000px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 0;
+    color: #4a3016;
+    font-family: "Lora", serif;
+    animation: fadeInUp 0.5s ease;
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
+}
+
+@media (max-width: 992px) {
+    .modal-content {
+        padding: 60px 40px;
+        height: auto;
+        min-height: 90vh;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 60px 20px;
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        margin: 0;
+        border-radius: 0;
+    }
+}
+
+.modal-header {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 2px solid rgba(74, 48, 22, 0.2);
+    margin-bottom: 15px;
+}
+
+.header-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.modal-header img {
+    height: 50px;
+    margin: 0;
+}
+
+.modal-header h2 {
+    font-size: 2.8rem;
+    margin: 0;
+    color: #5d2e0a;
+    font-family: var(--font-script);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.modal-header p {
+    font-size: 1rem;
+    font-style: italic;
+    color: #8b4513;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+.modal-header::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(139, 69, 19, 0.2);
+    margin: 20px 0;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #5d2e0a;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    transform: scale(1.1);
+    color: var(--accent);
+}
+
+.modal-body {
+    flex: 1;
+    padding-right: 5px;
+}
+
+.rustic-menu-section h4 {
+    color: #5d2e0a;
+    font-size: 1.4rem;
+    border-bottom: 2px solid rgba(139, 69, 19, 0.15);
+    margin: 25px 0 15px 0;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rustic-menu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rustic-menu-item {
+    border-bottom: 1px dotted rgba(74, 48, 22, 0.3);
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.rustic-menu-item:hover {
+    background: rgba(139, 69, 19, 0.05);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rustic-menu-item h3 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #5d2e0a;
+    font-family: var(--font-script);
+    font-weight: 700;
+}
+
+.item-price {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #8b4513;
+}
+
+.item-details {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(139, 69, 19, 0.05);
+    border-radius: 8px;
+    animation: fadeIn 0.4s ease;
+}
+
+.item-details.active {
+    display: flex;
+    gap: 20px;
+}
+
+.detail-img {
+    flex: 0 0 150px;
+    height: 120px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.detail-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detail-info {
+    flex: 1;
+}
+
+.detail-info h5 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #5d2e0a;
+}
+
+.detail-info ul {
+    list-style: none;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.detail-info li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.detail-info li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.modal-footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9rem;
+    color: #8b4513;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .close-modal {
+        right: 20px;
+        top: 20px;
+    }
+    .item-details.active {
+        flex-direction: column;
+    }
+    .detail-img {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 180px;
+    }
+}
+</style>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("menuModal");
+        const btn = document.querySelector(".btn-open-modal");
+        const span = document.querySelector(".close-modal");
+
+        if (btn && modal) {
+            btn.onclick = function () {
+                modal.classList.add("active");
+                document.body.style.overflow = "hidden";
+            };
+        }
+
+        if (span && modal) {
+            span.onclick = function () {
+                modal.classList.remove("active");
+                document.body.style.overflow = "auto";
+            };
+        }
+
+        window.onclick = function (event) {
+            if (modal && event.target == modal) {
+                modal.classList.remove("active");
+                document.body.style.overflow = "auto";
+            }
+        };
+
+        const menuItems = document.querySelectorAll(".rustic-menu-item");
+        menuItems.forEach((item) => {
+            item.onclick = function () {
+                const details = this.querySelector(".item-details");
+                if (!details) return;
+                const isActive = details.classList.contains("active");
+
+                document.querySelectorAll(".item-details").forEach((d) => {
+                    d.classList.remove("active");
+                    d.style.display = "none";
+                });
+
+                if (!isActive) {
+                    details.classList.add("active");
+                    details.style.display = "flex";
+                }
+            };
+        });
+    });
+</script>
