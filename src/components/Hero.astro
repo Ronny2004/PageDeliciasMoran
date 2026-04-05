@@ -1,137 +1,155 @@
 ---
+
 ---
+
 <section id="inicio" class="hero">
     <div class="hero-content container">
         <span class="badge">Desde el corazón de Quito</span>
         <h1>Sazón que abraza,<br />tradición que alimenta.</h1>
         <p>
-            Disfruta de la auténtica cocina ecuatoriana, preparada con
-            el amor y el secreto de la casa. El verdadero sabor de
-            nuestra tierra te espera en cada plato.
+            Disfruta de la auténtica cocina ecuatoriana, preparada con el amor y
+            el secreto de la casa. El verdadero sabor de nuestra tierra te
+            espera en cada plato.
         </p>
         <div class="hero-btns">
-            <button class="btn btn-badge btn-badge-primary btn-open-modal">Ver Menú de la Casa</button>
-            <a href="https://chat.whatsapp.com/BV0eiC6HClm6UeEPX5Fkq7" target="_blank" rel="noopener noreferrer" class="btn btn-badge btn-badge-secondary">Unirse al Grupo WhatsApp</a>
+            <button class="btn btn-badge btn-badge-primary btn-open-modal"
+                >Ver Menú de la Casa</button
+            >
+            <a
+                href="https://chat.whatsapp.com/BV0eiC6HClm6UeEPX5Fkq7"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-badge btn-badge-secondary"
+                >Unirse al Grupo WhatsApp</a
+            >
         </div>
     </div>
     <div class="hero-image-overlay"></div>
-    <div class="scroll-indicator">
+    <div
+        class="scroll-indicator"
+        onclick="document.getElementById('herencia').scrollIntoView({ behavior: 'smooth' });"
+        style="cursor: pointer;"
+    >
         <span>Desliza para descubrir</span>
         <i data-lucide="chevron-down"></i>
     </div>
 </section>
 
 <style>
-.hero {
-    min-height: 100vh;
-    background: url('/assets/hero.png') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    color: var(--white);
-    margin-top: 0;
-    padding-top: 100px;
-    padding-bottom: 2rem;
-    animation: fadeIn 1s ease;
-}
-
-.hero-image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 700px;
-    animation: fadeInUp 1s ease 0.3s both;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.badge {
-    background: var(--accent);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-    animation: pulse 2s ease-in-out infinite;
-}
-
-.hero h1 {
-    font-size: 4rem;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.hero-btns {
-    display: flex;
-    gap: 1rem;
-}
-
-.scroll-indicator {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    width: 100%;
-    z-index: 2;
-    text-align: center;
-    color: var(--white);
-    animation: fadeInUp 1.5s ease 1s both;
-    margin-top: 2rem;
-}
-
-.scroll-indicator span {
-    display: block;
-    font-size: 0.85rem;
-    margin-bottom: 0.5rem;
-    opacity: 0.9;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.scroll-indicator i {
-    display: block;
-    margin: 0 auto;
-    animation: bounce 2s ease-in-out infinite;
-}
-
-@media (max-width: 992px) {
-    .hero h1 {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 768px) {
     .hero {
-        text-align: center;
-        justify-content: center;
-    }
-    .hero-btns {
+        min-height: 100vh;
+        background: url("/assets/hero.png") no-repeat center center/cover;
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: var(--white);
+        margin-top: 0;
+        padding-top: 100px;
+        padding-bottom: 2rem;
+        animation: fadeIn 1s ease;
     }
+
+    .hero-image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.3)
+        );
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 700px;
+        animation: fadeInUp 1s ease 0.3s both;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .badge {
+        background: var(--accent);
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 4rem;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
     }
-}
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .hero-btns {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .scroll-indicator {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        width: 100%;
+        z-index: 2;
+        text-align: center;
+        color: var(--white);
+        animation: fadeInUp 1.5s ease 1s both;
+        margin-top: 2rem;
+    }
+
+    .scroll-indicator span {
+        display: block;
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+        opacity: 0.9;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .scroll-indicator i {
+        display: block;
+        margin: 0 auto;
+        animation: bounce 2s ease-in-out infinite;
+    }
+
+    @media (max-width: 992px) {
+        .hero h1 {
+            font-size: 3rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero {
+            text-align: center;
+            justify-content: center;
+        }
+        .hero-btns {
+            flex-direction: column;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+    }
 </style>

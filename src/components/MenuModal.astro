@@ -1,5 +1,77 @@
 ---
+const mainDishes = [
+    {
+        id: "tripas",
+        title: "Tripas Asadas",
+        price: "$2.50",
+        img: "/assets/hero.png",
+        ingredients: [
+            "Tripa de res premium",
+            "Marinado de ajo y comino",
+            "Papas doradas",
+            "Mote tierno",
+        ],
+    },
+    {
+        id: "cuero",
+        title: "Papas con Cuero",
+        price: "$2.50",
+        img: "/assets/hero.png",
+        ingredients: [
+            "Papas seleccionadas",
+            "Cuero de chancho tierno",
+            "Salsa espesa de maní",
+            "Cebolla y cilantro",
+        ],
+    },
+    {
+        id: "librillo",
+        title: "Papas con Librillo",
+        price: "$2.50",
+        img: "/assets/hero.png",
+        ingredients: [
+            "Librillo de res tierno",
+            "Papas harinosas",
+            "Salsa de maní y leche",
+            "Acompañante de aguacate",
+        ],
+    },
+    {
+        id: "caldo",
+        title: "Caldo de 31",
+        price: "$2.50",
+        img: "/assets/hero.png",
+        ingredients: [
+            "Menudencias de res",
+            "Hierbas del huerto",
+            "Papas cocidas",
+            "Cebolla blanca y ajo",
+        ],
+    },
+    {
+        id: "menudo",
+        title: "Menudo de Chancho",
+        price: "$4.50",
+        img: "/assets/hero.png",
+        ingredients: [
+            "Vísceras de chancho",
+            "Mote pelado",
+            "Hierbabuena fresca",
+            "Refrito de achiote",
+        ],
+    },
+];
+
+const drinks = [
+    {
+        id: "colas",
+        title: "Colas Varias",
+        price: "$0.50",
+        description: "Medianas personales, siempre heladas.",
+    },
+];
 ---
+
 <div id="menuModal" class="modal">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
@@ -9,128 +81,61 @@
                 <h2>Nuestra Carta</h2>
             </div>
             <p>
-                Sabor 100% Tradicional | Selecciona un Plato para ver
-                los detalles
+                Sabor 100% Tradicional | Selecciona un Plato para ver los
+                detalles
             </p>
         </div>
         <div class="modal-body">
             <div class="rustic-menu-section">
                 <h4>Platos de la Casa:</h4>
                 <div class="rustic-menu-grid">
-                    <div class="rustic-menu-item" data-dish="tripas">
-                        <div class="item-header">
-                            <h3>Tripas Asadas</h3>
-                            <span class="item-price">$2.50</span>
-                        </div>
-                        <div class="item-details">
-                            <div class="detail-img">
-                                <img src="/assets/hero.png" alt="Tripas Asadas" />
+                    {
+                        mainDishes.map((dish) => (
+                            <div class="rustic-menu-item" data-dish={dish.id}>
+                                <div class="item-header">
+                                    <h3>{dish.title}</h3>
+                                    <span class="item-price">{dish.price}</span>
+                                </div>
+                                <div class="item-details">
+                                    <div class="detail-img">
+                                        <img src={dish.img} alt={dish.title} />
+                                    </div>
+                                    <div class="detail-info">
+                                        <h5>Ingredientes:</h5>
+                                        <ul>
+                                            {dish.ingredients.map(
+                                                (ingredient) => (
+                                                    <li>{ingredient}</li>
+                                                ),
+                                            )}
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="detail-info">
-                                <h5>Ingredientes:</h5>
-                                <ul>
-                                    <li>Tripa de res premium</li>
-                                    <li>Marinado de ajo y comino</li>
-                                    <li>Papas doradas</li>
-                                    <li>Mote tierno</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rustic-menu-item" data-dish="cuero">
-                        <div class="item-header">
-                            <h3>Papas con Cuero</h3>
-                            <span class="item-price">$2.50</span>
-                        </div>
-                        <div class="item-details">
-                            <div class="detail-img">
-                                <img src="/assets/hero.png" alt="Papas con Cuero" />
-                            </div>
-                            <div class="detail-info">
-                                <h5>Ingredientes:</h5>
-                                <ul>
-                                    <li>Papas seleccionadas</li>
-                                    <li>Cuero de chancho tierno</li>
-                                    <li>Salsa espesa de maní</li>
-                                    <li>Cebolla y cilantro</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rustic-menu-item" data-dish="librillo">
-                        <div class="item-header">
-                            <h3>Papas con Librillo</h3>
-                            <span class="item-price">$2.50</span>
-                        </div>
-                        <div class="item-details">
-                            <div class="detail-img">
-                                <img src="/assets/hero.png" alt="Papas con Librillo" />
-                            </div>
-                            <div class="detail-info">
-                                <h5>Ingredientes:</h5>
-                                <ul>
-                                    <li>Librillo de res tierno</li>
-                                    <li>Papas harinosas</li>
-                                    <li>Salsa de maní y leche</li>
-                                    <li>Acompañante de aguacate</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rustic-menu-item" data-dish="caldo">
-                        <div class="item-header">
-                            <h3>Caldo de 31</h3>
-                            <span class="item-price">$2.50</span>
-                        </div>
-                        <div class="item-details">
-                            <div class="detail-img">
-                                <img src="/assets/hero.png" alt="Caldo de 31" />
-                            </div>
-                            <div class="detail-info">
-                                <h5>Ingredientes:</h5>
-                                <ul>
-                                    <li>Menudencias de res</li>
-                                    <li>Hierbas del huerto</li>
-                                    <li>Papas cocidas</li>
-                                    <li>Cebolla blanca y ajo</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rustic-menu-item" data-dish="menudo">
-                        <div class="item-header">
-                            <h3>Menudo de Chancho</h3>
-                            <span class="item-price">$4.50</span>
-                        </div>
-                        <div class="item-details">
-                            <div class="detail-img">
-                                <img src="/assets/hero.png" alt="Menudo de Chancho" />
-                            </div>
-                            <div class="detail-info">
-                                <h5>Ingredientes:</h5>
-                                <ul>
-                                    <li>Vísceras de chancho</li>
-                                    <li>Mote pelado</li>
-                                    <li>Hierbabuena fresca</li>
-                                    <li>Refrito de achiote</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                        ))
+                    }
                 </div>
             </div>
             <div class="rustic-menu-section" style="margin-top: 20px;">
                 <h4>Bebidas:</h4>
                 <div class="rustic-menu-grid">
-                    <div class="rustic-menu-item" data-dish="colas">
-                        <div class="item-header">
-                            <h3>Colas Varias</h3>
-                            <span class="item-price">$0.50</span>
-                        </div>
-                        <p style="font-size: 0.9rem; font-style: italic; opacity: 0.8; margin-top: 5px;">
-                            Medianas personales, siempre heladas.
-                        </p>
-                    </div>
+                    {
+                        drinks.map((drink) => (
+                            <div class="rustic-menu-item" data-dish={drink.id}>
+                                <div class="item-header">
+                                    <h3>{drink.title}</h3>
+                                    <span class="item-price">
+                                        {drink.price}
+                                    </span>
+                                </div>
+                                {drink.description && (
+                                    <p style="font-size: 0.9rem; font-style: italic; opacity: 0.8; margin-top: 5px;">
+                                        {drink.description}
+                                    </p>
+                                )}
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </div>
@@ -141,260 +146,261 @@
 </div>
 
 <style>
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    overflow-y: auto;
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(5px);
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.modal.active {
-    display: flex;
-}
-
-.modal-content {
-    background: url('/assets/parchment.png') no-repeat center center;
-    background-size: 100% 100%;
-    margin: 40px auto;
-    padding: 80px 100px;
-    width: 92%;
-    max-width: 650px;
-    min-height: 1000px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    border-radius: 0;
-    color: #4a3016;
-    font-family: "Lora", serif;
-    animation: fadeInUp 0.5s ease;
-    box-shadow: none;
-    background-color: transparent;
-    border: none;
-}
-
-@media (max-width: 992px) {
-    .modal-content {
-        padding: 60px 40px;
-        height: auto;
-        min-height: 90vh;
-        margin: 20px auto;
-    }
-}
-
-@media (max-width: 600px) {
-    .modal-content {
-        padding: 60px 20px;
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
         width: 100%;
-        height: auto;
-        min-height: 100vh;
-        margin: 0;
-        border-radius: 0;
+        height: 100vh;
+        overflow-y: auto;
+        background-color: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(5px);
+        justify-content: center;
+        align-items: flex-start;
     }
-}
 
-.modal-header {
-    text-align: center;
-    padding: 10px 0;
-    border-bottom: 2px solid rgba(74, 48, 22, 0.2);
-    margin-bottom: 15px;
-}
+    .modal.active {
+        display: flex;
+    }
+    .modal-content * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .modal-content {
+        background: url("/assets/parchment.png") no-repeat center center;
+        background-size: 100% 100%;
+        margin: 20px auto;
+        padding: 120px 100px 140px 100px;
+        width: 92%;
+        max-width: 650px;
+        min-height: 1100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: relative;
+        border-radius: 0;
+        color: #4a3016;
+        font-family: "Lora", serif;
+        animation: fadeInUp 0.5s ease;
+        box-shadow: none;
+        background-color: transparent;
+        border: none;
+    }
 
-.header-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 5px;
-}
+    @media (max-width: 992px) {
+        .modal-content {
+            padding: 60px 40px;
+            height: auto;
+            min-height: 90vh;
+            margin: 20px auto;
+        }
+    }
 
-.modal-header img {
-    height: 50px;
-    margin: 0;
-}
+    @media (max-width: 600px) {
+        .modal-content {
+            padding: 60px 20px;
+            width: 100%;
+            height: auto;
+            min-height: 100vh;
+            margin: 0;
+            border-radius: 0;
+        }
+    }
 
-.modal-header h2 {
-    font-size: 2.8rem;
-    margin: 0;
-    color: #5d2e0a;
-    font-family: var(--font-script);
-    font-weight: 700;
-    line-height: 1;
-}
+    .modal-header {
+        text-align: center;
+        border-bottom: 2px solid rgba(74, 48, 22, 0.2);
+        padding-bottom: 15px;
+        margin-bottom: 5px;
+    }
 
-.modal-header p {
-    font-size: 1rem;
-    font-style: italic;
-    color: #8b4513;
-    margin-top: 10px;
-    opacity: 0.9;
-}
+    .header-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 5px;
+    }
 
-.modal-header::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: rgba(139, 69, 19, 0.2);
-    margin: 20px 0;
-}
+    .modal-header img {
+        height: 50px;
+        margin: 0;
+    }
 
-.close-modal {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    color: #5d2e0a;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 10;
-    transition: var(--transition);
-}
+    .modal-header h2 {
+        font-size: 2.8rem;
+        margin: 0;
+        color: #5d2e0a;
+        font-family: var(--font-script);
+        font-weight: 700;
+        line-height: 1;
+    }
 
-.close-modal:hover {
-    transform: scale(1.1);
-    color: var(--accent);
-}
+    .modal-header p {
+        font-size: 1rem;
+        font-style: italic;
+        color: #8b4513;
+        margin-top: 10px;
+        opacity: 0.9;
+    }
 
-.modal-body {
-    flex: 1;
-    padding-right: 5px;
-}
-
-.rustic-menu-section h4 {
-    color: #5d2e0a;
-    font-size: 1.4rem;
-    border-bottom: 2px solid rgba(139, 69, 19, 0.15);
-    margin: 25px 0 15px 0;
-    padding-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.rustic-menu-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.rustic-menu-item {
-    border-bottom: 1px dotted rgba(74, 48, 22, 0.3);
-    padding: 10px 0;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.rustic-menu-item:hover {
-    background: rgba(139, 69, 19, 0.05);
-}
-
-.item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.rustic-menu-item h3 {
-    font-size: 1.8rem;
-    margin: 0;
-    color: #5d2e0a;
-    font-family: var(--font-script);
-    font-weight: 700;
-}
-
-.item-price {
-    font-weight: bold;
-    font-size: 1.3rem;
-    color: #8b4513;
-}
-
-.item-details {
-    display: none;
-    margin-top: 20px;
-    padding: 20px;
-    background: rgba(139, 69, 19, 0.05);
-    border-radius: 8px;
-    animation: fadeIn 0.4s ease;
-}
-
-.item-details.active {
-    display: flex;
-    gap: 20px;
-}
-
-.detail-img {
-    flex: 0 0 150px;
-    height: 120px;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.detail-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.detail-info {
-    flex: 1;
-}
-
-.detail-info h5 {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: #5d2e0a;
-}
-
-.detail-info ul {
-    list-style: none;
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-.detail-info li {
-    margin-bottom: 4px;
-    position: relative;
-    padding-left: 15px;
-}
-
-.detail-info li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-}
-
-.modal-footer {
-    text-align: center;
-    padding: 40px 0;
-    font-size: 0.9rem;
-    color: #8b4513;
-    opacity: 0.8;
-}
-
-@media (max-width: 768px) {
     .close-modal {
+        position: absolute;
         right: 20px;
         top: 20px;
+        color: #5d2e0a;
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10;
+        transition: var(--transition);
     }
-    .item-details.active {
+
+    .close-modal:hover {
+        transform: scale(1.1);
+        color: var(--accent);
+    }
+
+    .modal-body {
+        flex: 1;
+        padding-right: 5px;
+    }
+
+    .rustic-menu-section h4 {
+        color: #5d2e0a;
+        font-size: 1.4rem;
+        border-bottom: 2px solid rgba(139, 69, 19, 0.15);
+        margin: 5px 0 15px 0;
+        padding-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .rustic-menu-section:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .rustic-menu-item:last-child {
+        border-bottom: none; /* Quitamos la línea punteada al último item para que no ensucie */
+    }
+
+    .rustic-menu-grid {
+        display: flex;
         flex-direction: column;
+        gap: 20px;
     }
+
+    .rustic-menu-item {
+        border-bottom: 1px dotted rgba(74, 48, 22, 0.3);
+        padding: 10px 0;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .rustic-menu-item:hover {
+        background: rgba(139, 69, 19, 0.05);
+    }
+
+    .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .rustic-menu-item h3 {
+        font-size: 1.8rem;
+        margin: 0;
+        color: #5d2e0a;
+        font-family: var(--font-script);
+        font-weight: 700;
+    }
+
+    .item-price {
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: #8b4513;
+    }
+
+    .item-details {
+        display: none;
+        margin-top: 20px;
+        padding: 20px;
+        background: rgba(139, 69, 19, 0.05);
+        border-radius: 8px;
+        animation: fadeIn 0.4s ease;
+    }
+
+    .item-details.active {
+        display: flex;
+        gap: 20px;
+    }
+
     .detail-img {
-        flex: 0 0 auto;
-        width: 100%;
-        height: 180px;
+        flex: 0 0 150px;
+        height: 120px;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-}
+
+    .detail-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .detail-info {
+        flex: 1;
+    }
+
+    .detail-info h5 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        color: #5d2e0a;
+    }
+
+    .detail-info ul {
+        list-style: none;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .detail-info li {
+        margin-bottom: 4px;
+        position: relative;
+        padding-left: 15px;
+    }
+
+    .detail-info li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+    }
+
+    .modal-footer {
+        text-align: center;
+        padding-bottom: 70px;
+        margin-top: 80px;
+        font-size: 1rem;
+        color: #8b4513;
+        opacity: 1;
+        font-weight: 800;
+        font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+        .modal-content {
+            padding: 100px 30px 80px 30px; /* Padding más ajustado en móvil */
+            min-height: auto; /* En móvil que crezca según el contenido */
+        }
+        .modal-header h2 {
+            font-size: 2rem;
+        }
+    }
 </style>
 
 <script is:inline>
