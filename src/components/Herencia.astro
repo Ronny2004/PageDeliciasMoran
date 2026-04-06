@@ -1,26 +1,27 @@
 ---
+
 ---
+
 <section id="herencia" class="herencia">
     <div class="container grid-2">
         <div class="herencia-text">
             <h2 class="section-title">Nuestra Herencia</h2>
             <p>
-                En Las Delicias de Morán, no solo servimos comida;
-                compartimos un legado. Cada ingrediente es seleccionado
-                con cuidado y cada receta es un homenaje a nuestras
-                raíces.
+                En Las Delicias de Morán, no solo servimos comida; compartimos
+                un legado. Cada ingrediente es seleccionado con cuidado y cada
+                receta es un homenaje a nuestras raíces.
             </p>
             <p>
-                Nuestra cocina huele a leña, a maní recién tostado y a
-                esa calidez que solo se encuentra en el hogar. Somos el
-                punto de encuentro de los amantes de la buena mesa y la
-                tradición quiteña.
+                Nuestra cocina huele a leña, a maní recién tostado y a esa
+                calidez que solo se encuentra en el hogar. Somos el punto de
+                encuentro de los amantes de la buena mesa y la tradición
+                quiteña.
             </p>
         </div>
         <div class="herencia-img-container">
             <div class="img-frame">
                 <img
-                    src="/assets/hero.png"
+                    src="/assets/herencia.png"
                     alt="Cocina tradicional ecuatoriana"
                     class="side-img"
                 />
@@ -30,48 +31,48 @@
 </section>
 
 <style>
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.herencia {
-    background-color: var(--bg-cream);
-    padding-top: 2rem;
-}
-
-.herencia p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.img-frame {
-    padding: 1.5rem;
-    background: var(--white);
-    box-shadow: var(--shadow);
-    transform: rotate(2deg);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
-}
-
-.img-frame:hover {
-    transform: rotate(0deg) scale(1.02);
-    box-shadow: var(--shadow-hover);
-}
-
-.side-img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    display: block;
-}
-
-@media (max-width: 992px) {
     .grid-2 {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
     }
-}
+
+    .herencia {
+        background-color: var(--bg-cream);
+        padding-top: 2rem;
+    }
+
+    .herencia p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .img-frame {
+        padding: 1.5rem;
+        background: var(--white);
+        box-shadow: var(--shadow);
+        transform: rotate(2deg);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+    }
+
+    .img-frame:hover {
+        transform: rotate(0deg) scale(1.02);
+        box-shadow: var(--shadow-hover);
+    }
+
+    .side-img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        display: block;
+    }
+
+    @media (max-width: 992px) {
+        .grid-2 {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+    }
 </style>
